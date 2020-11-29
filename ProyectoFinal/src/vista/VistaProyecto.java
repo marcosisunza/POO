@@ -19,6 +19,7 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.*;
 import org.jfree.data.category.DefaultCategoryDataset;
 
+// Implementación de la vista del proyecto
 public class VistaProyecto extends JFrame {
 	public  JButton boton;
 	public JPanel cont;
@@ -37,17 +38,25 @@ public class VistaProyecto extends JFrame {
 	public JCheckBox checkBox7;
 	public ButtonGroup checkBoxGroup2;
 	public VistaProyecto(){
+		//se implementa el panel principal
+		//Se implementa la distribución del frame principal
+		//En 0,0 se encuentra el panel de los controles, y en 1,0 el panel con la gráfica la grafica
 		super("Casos de COVID");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(1400,1400);
 		this.setLayout(new GridLayout(1,2));
 		
+		
+		  //se implementa el panel principal de los controles
+		  //En 0,0 irá la lista de estados, en 0,1 irá el selector de sexo
+		  //En 0,3 irá el selector de enfermedades o edad, en 0,4 irá el botón principal
 		 pan=new JPanel(); 
 		  pan.setLayout(new GridLayout(4,1));
 		  Color col=new Color(234, 234, 232 );
 		  Color col2=new Color(132, 245, 71 );
 		  pan.setBackground(col);
 			 
+		  //Panel donde se encuentran los estados
 			 JPanel p1=new JPanel();
 				 JLabel texto=new JLabel("Selecciona una entidad",SwingConstants.CENTER);
 				 texto.setFont(new Font("arial", Font.PLAIN, 15));
@@ -89,6 +98,8 @@ public class VistaProyecto extends JFrame {
 				 	p1.add(combo);
 			pan.add(p1);
 			 
+			
+			//Panel donde se encuentra la selección del sexo
 			p2=new JPanel();
 				 p2.setLayout(new GridLayout(2,1));
 				 JLabel texto1=new JLabel("Selecciona un género",SwingConstants.CENTER);
@@ -112,7 +123,7 @@ public class VistaProyecto extends JFrame {
 			pan.add(p2);
 			
 			
-			
+			//Panel donde se encuentra la selección del padecimiento
 			p3=new JPanel();
 			 	p3.setLayout(new GridLayout(2,1));
 			 	JLabel texto11=new JLabel("Selecciona un padecimiento",SwingConstants.CENTER);
@@ -142,7 +153,7 @@ public class VistaProyecto extends JFrame {
 			 pan.add(p3);
 			
 			 
-			 
+			 //Panel donde se encuentra el botón de ejecución
 			p4=new JPanel();
 			 p4.setOpaque(true);
 			 p4.setBackground(col11);
@@ -164,6 +175,7 @@ public class VistaProyecto extends JFrame {
 	}
 	
 	
+	//Función para crear la gráfica de barras cuando la selección es alguna enfermedad
 	public void Grafica(int data, String enfermedad, String estado, String sexo) //Función para graficar los datos de obesidad
     {
     	
@@ -180,7 +192,6 @@ public class VistaProyecto extends JFrame {
     	}
     		
     	Datos.setValue(data, r1, "");
-    	 //JFreeChart Grafica = ChartFactory.createBarChart("Personas con COVID", "", "Número de personas", Datos, PlotOrientation.VERTICAL,false, false, false);
     	 JFreeChart Grafica2 = ChartFactory.createBarChart3D(sex+" con COVID y "+enfermedad+" en "+estado, "Positivo a COVID", "Número de personas", Datos, PlotOrientation.VERTICAL,false, false, false);
     	ChartFrame fr = new ChartFrame("Ejemplo",Grafica2);
     	fr.pack();
@@ -189,6 +200,7 @@ public class VistaProyecto extends JFrame {
     	cp.setBounds(30,120,600,400);	
     }
 	
+	//Función para crear la gráfica de barras cuando la selección es edades
 	public void GraficaEdad(int r1,int r2, int r3, int r4,int r5, int r6, String estado, String sexo) //Función para graficar los datos de obesidad
     {
     	
