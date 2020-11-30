@@ -1,5 +1,6 @@
 package modelo;
 
+//se crea la clase con las variables a leer y utilizar de la base de datos
 public class PersonaModelo {
 	int sexo;
 	int entidadRes;

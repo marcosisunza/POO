@@ -11,7 +11,6 @@ import javax.swing.JOptionPane;
 public class Conexion {
 	private static Connection conn; //Objeto de tipo Connection 
 	private static final String driver = "com.mysql.jdbc.Driver";
-	//private static final String driver = "com.mysql.cj.jdbc.Driver";
 	
 	private static final String user = "root";
 	private static final String password = "";
@@ -20,7 +19,6 @@ public class Conexion {
 	                                                  // puerto nombre BD
 	//url ="jdbc:mysql://" + host + ":" + port + "/" + database;
 	private static final String url = "jdbc:mysql://localhost:3306/PruebaPOO";
-	//private static final String url = "jdbc:mysql://127.0.0.1:3306/pruebapoo";
 	
 	public Conexion(){
 		conn = null;
