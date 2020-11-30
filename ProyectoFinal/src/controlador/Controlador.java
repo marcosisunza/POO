@@ -53,11 +53,8 @@ public class Controlador implements ActionListener{
 			   int rango4=0;
 			   int rango5=0;
 			   int rango6=0;
-			  System.out.println("estado: "+estado);
 			  String sexo=vistPer.checkBoxGroup.getSelection().getActionCommand(); //Se identifica el sexo que fue seleccionado
-			  System.out.println(sexo);
 			  String enfermedad=vistPer.checkBoxGroup2.getSelection().getActionCommand(); //Se identifica la enfermedad que fue seleccionada
-			  System.out.println(enfermedad);
 			  //Se castea el valor del sexo de acuerdo al de la base de datos para obtenerl la consulta correctamente
 			  if(sexo.equals("Hombre"))
 			   {
@@ -67,8 +64,6 @@ public class Controlador implements ActionListener{
 			   {
 				   sexoAux = 1;
 			   }   
-			 System.out.println(sexoAux);
-			 System.out.println(personaConecta.listaPersonas().size());
 			//Este controlador recorre la lista de datos para obtener todos los registros que cumplan con los requisitos
 			  	for(PersonaModelo aux:personaConecta.listaPersonas())
 			   {
